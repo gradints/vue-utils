@@ -1,0 +1,43 @@
+{
+  "name": "@gradin/vue-utils",
+  "version": "0.0.3",
+  "description": "Useful utilities for Vue projects.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint . --fix",
+    "publish": "npm run build && npm publish --access public"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gradints/vue-utils.git"
+  },
+  "keywords": [
+    "vue",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Christhofer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gradints/vue-utils/issues"
+  },
+  "homepage": "https://github.com/gradints/vue-utils#readme",
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "eslint": "^9.26.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.0"
+  },
+  "peerDependencies": {
+    "vue-router": "^4.5.1"
+  }
+}
