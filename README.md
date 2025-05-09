@@ -1,4 +1,4 @@
-# vue-utils
+# vue-utils <!-- omit in toc -->
 
 Useful utilities for Vue projects.
 
@@ -6,7 +6,14 @@ Useful utilities for Vue projects.
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@gradin/vue-utils)
 ![npm](https://img.shields.io/npm/dt/@gradin/vue-utils)
 
-## Installation
+Table of Contents:
+<!-- no toc --> 
+- [Installation](#installation)
+- [Features](#features)
+  - [Improved Vue Reactive](#improved-vue-reactive)
+  - [Watch Route Query and Params Changes](#watch-route-query-and-params-changes)
+
+## Installation 
 
 ```sh
 # Using npm
@@ -16,7 +23,7 @@ npm install @gradin/vue-utils
 yarn add @gradin/vue-utils
 ```
 
-## Featurs
+## Features
 
 ### Improved Vue Reactive
 
@@ -24,10 +31,7 @@ The `gReactive` function is a wrapper around Vue's `reactive` function that adds
 - **Reset**: The `reset` method resets the reactive object to its initial state.
 - **Set**: The `set` method sets the reactive object to a new value, merging the new value with the existing value.
 
-Example `reactive` vs `gReactive`
-
-<details>
-<summary>Show Codes</summary>
+Example `reactive` vs `gReactive`:
 
 ```typescript
   // before
@@ -82,4 +86,54 @@ Example `reactive` vs `gReactive`
       })
   }
 ```
-</details>
+
+### Watch Route Query and Params Changes
+
+The `whenRouteChange` will allow you to do something changes but still on the same page. It is also triggered on the first mount of the component.
+
+`whenRouteChange` accepts two arguments:
+- `callback`: The function to be called when the route query or params changes.
+- `watchSource`: Optional. A function that returns the value to be watched. If not provided, it will watch the entire route query and route params object.
+
+| When                                                       | Triggered |
+| :--------------------------------------------------------- | :-------: |
+| Route query changed (e.g /products to /products?page=2)    |    Yes    |
+| Route params changed (e.g /products/1 to /products/2)      |    Yes    |
+| Script setup loaded (using `watch` with `immediate: true`) |    Yes    |
+| Route name changed (e.g /products to /home)                |    No     |
+| Also Route name changed (e.g /products to /product/1)      |    No     |
+
+Usage:
+```typescript
+  import { whenRouteChange } from '@gradin/vue-utils';
+  import { useRoute } from 'vue-router';
+  import axios from 'axios';
+
+  const route = useRoute();
+  const products = ref<Product[]>([]);
+
+  const getData = () => {
+    const response = await axios.get('/api/products', {
+      params: {
+        page: route.query.page,
+        search: route.query.search,
+        category_id: route.query.category_id,
+        sort: route.query.sort,
+      }
+    })
+    products.value = response.data;
+  }
+  
+  whenRouteChange(getData) // will call getData once at the beginning, and again when the route query or params changes.
+
+  // or if you want just to track route query page
+  const highlightMatchesSearch = () => { 
+    //
+  }
+  whenRouteChange(
+    () => {
+      highlightMatchesSearch()
+    },
+    () => route.query.search
+  )
+```

@@ -1,14 +1,14 @@
 {
   "name": "@gradin/vue-utils",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "Useful utilities for Vue projects.",
   "type": "module",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --fix",
-    "publish": "npm run build && npm publish --access public"
+    "publish": "npm run build"
   },
   "files": [
     "dist"
