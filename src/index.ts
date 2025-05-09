@@ -36,8 +36,9 @@ export const gReactive = resetableReactive // alias
 export const whenRouteChange = (callback: () => void, watchSource?: () => unknown) => {
   const route = useRoute()
   const routeName = route.name // cache route name
+  const watchRouteParamsAndQuery = () => JSON.stringify([route.query, route.params])
   watch(
-    watchSource ?? (() => route.fullPath),
+    watchSource ?? watchRouteParamsAndQuery,
     () => {
       if (route.name === routeName) {
         callback()
