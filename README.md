@@ -12,6 +12,7 @@ Table of Contents:
 - [Features](#features)
   - [Improved Vue Reactive](#improved-vue-reactive)
   - [Watch Route Query and Params Changes](#watch-route-query-and-params-changes)
+- [Development](#development)
 
 ## Installation 
 
@@ -136,4 +137,13 @@ Usage:
     },
     () => route.query.search
   )
+```
+
+## Development
+
+To Deploy:
+
+```sh
+npm run build
+npm publish
 ```
