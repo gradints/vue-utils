@@ -127,7 +127,7 @@ Usage:
   
   whenRouteChange(getData) // will call getData once at the beginning, and again when the route query or params changes.
 
-  // or if you want just to track route query page
+  // or if you want to track just the route query.search
   const highlightMatchesSearch = () => { 
     //
   }
@@ -146,4 +146,9 @@ To Deploy:
 ```sh
 npm run build
 npm publish
+```
+
+To Authenticate:
+```sh
+npm login
 ```
