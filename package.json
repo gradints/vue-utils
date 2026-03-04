@@ -35,13 +35,13 @@
   },
   "homepage": "https://github.com/gradints/vue-utils#readme",
   "dependencies": {
-    "vue": "^3.5.27"
+    "vue": "^3.5.29"
   },
   "devDependencies": {
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.3",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.54.0"
+    "typescript-eslint": "^8.56.1"
   },
   "peerDependencies": {
     "vue-router": "^4.6.3 || ^5.0.0"

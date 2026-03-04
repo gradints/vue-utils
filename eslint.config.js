@@ -5,15 +5,29 @@ import ts from 'typescript-eslint'
 export default [
   { ignores: ['node_modules', 'dist'] },
 
-  // js
+  // Js
   js.configs.recommended,
   {
     rules: {
       'no-undef': 'off',
+      'indent': ['warn', 2],
+      'comma-dangle': ['warn', 'always-multiline'],
+      'func-call-spacing': 'warn',
+      'space-in-parens': ['warn', 'never'],
+      'space-infix-ops': 'warn',
+      'no-multi-spaces': 'warn',
+      'key-spacing': 'warn',
+      'no-whitespace-before-property': 'warn',
+      'computed-property-spacing': ['warn', 'never'],
+      'arrow-spacing': 'warn',
+      'object-curly-spacing': ['warn', 'always'],
+      'keyword-spacing': 'warn',
+      'space-before-blocks': 'warn',
+      'comma-spacing': 'warn',
     },
   },
 
-  // ts
+  // Ts
   ...ts.configs.recommended,
   {
     rules: {
@@ -22,14 +36,14 @@ export default [
     },
   },
 
-  // simple import sort
+  // Simple import sort
   {
     plugins: {
       'simple-import-sort': simpleImportSort,
     },
     rules: {
       'simple-import-sort/imports': ['warn', {
-        'groups': [['^\\u0000', '^node:', '^@?\\w', '^', '^\\.']], // remove blank lines between import group
+        'groups': [['^\\u0000', '^node:', '^@?\\w', '^', '^\\.']], // Remove blank lines between import group
       }],
       'simple-import-sort/exports': 'error',
     },
