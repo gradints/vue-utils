@@ -12,6 +12,7 @@ Table of Contents:
 - [Features](#features)
   - [Improved Vue Reactive](#improved-vue-reactive)
   - [Watch Route Query and Params Changes](#watch-route-query-and-params-changes)
+  - [Helpers for Years](#helpers-for-years)
 - [Development](#development)
 
 ## Installation 
@@ -138,6 +139,20 @@ Usage:
     () => route.query.search
   )
 ```
+
+### Helpers for Years
+
+Usage:
+```typescript
+import {
+  currentYear, // the current year (e.g. 2026)
+  releaseYear, // e.g 2024
+  footerYear, // e.g 2024-2026
+  yearsSinceRelease, // e.g [2024, 2025, 2026]
+} from '@gradin/vue-utils';
+```
+
+To use `releaseYear`, `footerYear`, `yearsSinceRelease`, you need to set the `VITE_APP_RELEASE_YEAR` environment variable to the year your project was released. If not set, it will default to the current year.
 
 ## Development
 
