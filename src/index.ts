@@ -1,6 +1,6 @@
-import { resetableReactive } from "./resetable-reactive"
-export { resetableReactive } from "./resetable-reactive"
+import { resetableReactive } from "./resetable-reactive.js"
+export { resetableReactive } from "./resetable-reactive.js"
 export const gReactive = resetableReactive // alias
 
-export { currentYear, footerYear, releaseYear, yearsSinceRelease } from "./footer-year"
-export { whenRouteChange } from "./when-route-change"
+export { currentYear, footerYear, releaseYear, yearsSinceRelease } from "./footer-year.js"
+export { whenRouteChange } from "./when-route-change.js"
