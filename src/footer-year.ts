@@ -1,6 +1,6 @@
 export const currentYear = new Date().getFullYear()
 
-export const releaseYear = Number((import.meta as unknown as { env: { VITE_APP_RELEASE_YEAR?: string } }).env.VITE_APP_RELEASE_YEAR ?? 0) || currentYear
+export const releaseYear = Number(((import.meta as unknown as { env: Record<string, string | undefined> }).env?.VITE_APP_RELEASE_YEAR) ?? 0) || currentYear
 
 export const footerYear = releaseYear === currentYear ? `${currentYear}` : `${releaseYear}-${currentYear}`
 
