@@ -3,11 +3,11 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "module": "ESNext",
-    "target": "ES2015",
-    "declaration": true, // Important for type definitions
-    "declarationDir": "./dist/types", // Optional: separate .d.ts output
-    "moduleResolution": "node",
-    "esModuleInterop": true,
+    "target": "ES2020",
+    "declaration": true,
+    "isolatedModules": true,
+    // "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true
   },
   "include": [

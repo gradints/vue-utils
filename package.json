@@ -1,6 +1,6 @@
 {
   "name": "@gradin/vue-utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Useful utilities for Vue projects.",
   "type": "module",
   "main": "dist/index.js",
@@ -35,16 +35,16 @@
   },
   "homepage": "https://github.com/gradints/vue-utils#readme",
   "dependencies": {
-    "vue": "^3.5.30"
+    "vue": "^3.5.40"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.2"
+    "eslint-plugin-simple-import-sort": "^14.0.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.65.0"
   },
   "peerDependencies": {
-    "vue-router": "^4.6.3 || ^5.0.0"
+    "vue-router": "^4.6.3 || ^5.2.0"
   }
 }
