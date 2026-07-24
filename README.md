@@ -160,7 +160,7 @@ To Deploy:
 
 ```sh
 npm run build
-npm publish
+np
 ```
 
 To Authenticate:
